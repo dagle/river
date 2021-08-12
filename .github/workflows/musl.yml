@@ -37,11 +37,11 @@ jobs:
 
       - name: build
         run: |
-          zig build
+          zig build -dynamic
 
       - name: test
         run: |
-          zig build test
+          zig build -dynamic test
 
   xwayland_build_on_musl:
     name: xwayland build on musl
@@ -68,11 +68,11 @@ jobs:
 
       - name: build
         run: |
-          zig build -Dxwayland=true
+          zig build -Dxwayland=true -dynamic
 
       - name: test
         run: |
-          zig build -Dxwayland=true test
+          zig build -Dxwayland=true -dynamic test 
 
   zig_fmt_on_musl:
     name: zig fmt on musl
