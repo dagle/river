@@ -15,7 +15,7 @@ jobs:
   default_build:
     name: default build
     runs-on: ubuntu-latest
-    container: voidlinux-musl/voidlinux-musl:latest
+    container: voidlinux/voidlinux-musl:latest
 
     steps:
       - name: install deps
@@ -51,7 +51,7 @@ jobs:
   xwayland_build:
     name: xwayland build
     runs-on: ubuntu-latest
-    container: voidlinux-musl/voidlinux-musl:latest
+    container: voidlinux/voidlinux-musl:latest
 
     steps:
       - name: install deps
@@ -87,7 +87,7 @@ jobs:
   zig_fmt:
     name: zig fmt
     runs-on: ubuntu-latest
-    container: voidlinux-musl/voidlinux-musl:latest
+    container: voidlinux/voidlinux-musl:latest
 
     steps:
       - name: install deps
