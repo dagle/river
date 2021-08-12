@@ -12,8 +12,8 @@ on:
 name: voidlinux-musl
 
 jobs:
-  default_build:
-    name: default build
+  default_build_on_musl:
+    name: default build on musl
     runs-on: ubuntu-latest
     container: voidlinux/voidlinux-musl:latest
 
@@ -36,7 +36,7 @@ jobs:
           meson build --auto-features=enabled -Dexamples=false -Dwerror=false -Db_ndebug=false
           ninja -C build install
       - name: checkout
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v2
         with:
           submodules: true
 
@@ -48,8 +48,8 @@ jobs:
         run: |
           zig build test
 
-  xwayland_build:
-    name: xwayland build
+  xwayland_build_on_musl:
+    name: xwayland build on musl
     runs-on: ubuntu-latest
     container: voidlinux/voidlinux-musl:latest
 
@@ -72,7 +72,7 @@ jobs:
           meson build --auto-features=enabled -Dexamples=false -Dwerror=false -Db_ndebug=false
           ninja -C build install
       - name: checkout
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v2
         with:
           submodules: true
 
@@ -84,8 +84,8 @@ jobs:
         run: |
           zig build -Dxwayland=true test
 
-  zig_fmt:
-    name: zig fmt
+  zig_fmt_on_musl:
+    name: zig fmt on musl
     runs-on: ubuntu-latest
     container: voidlinux/voidlinux-musl:latest
 
@@ -97,7 +97,7 @@ jobs:
           xbps-install -uy zig git
 
       - name: checkout
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v2
         with:
           submodules: true
 
